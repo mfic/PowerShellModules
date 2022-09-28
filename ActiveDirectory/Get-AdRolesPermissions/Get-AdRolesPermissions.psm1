@@ -30,7 +30,7 @@ Function Get-AdRolesPermissions {
         $data = $output | Select-Object @{n = 'Roles'; e = { $_.Keys } }, @{n = 'Permissions'; e = { $_.Values } }
             
         if ($export) {
-            $data | Export-Csv -TypeInformation -Delimiter ";" -Path $path
+            $data | Export-Csv -Delimiter ";" -Path $path
         }
         else {
             $data
